@@ -1,12 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 // const db = require('./db');
-require('dotenv').config();
 const db = require('./db');
-
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+require('dotenv').config();
+
 
 app.get('/pessoas', async (req, res) => {
     try {
@@ -133,9 +134,7 @@ app.post('/pessoas/aplicar', async (req, res) => {
 })
 
 
-
-// console.log(process.env.DB_PASSWORD);
-const PORT = 5000
+const PORT = process.env.PORT
 
 
 app.listen(PORT, () => {
