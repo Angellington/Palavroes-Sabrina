@@ -19,10 +19,11 @@ function App() {
         backgroundColor: '#f0f0f0', 
         display: 'flex', 
         flexDirection: 'row', 
-        gap: '20px' 
+        gap: '20px' ,
+        className: 'app-container'
       }}
     >
-      <Actions onActionComplete={triggerReload} />
+      <Actions onActionComplete={triggerReload} sx={{ className: 'Phase-1' } }/>
       <Historical key={reloadKey} />
     </Box>
   );
